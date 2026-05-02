@@ -23,11 +23,11 @@ jobs:
           cache: maven
 
       - name: Build Spigot 26.1 via BuildTools
-        run: |
-          mkdir -p /tmp/bt
-          cd /tmp/bt
-          wget -q https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar -O BuildTools.jar
-          java -jar BuildTools.jar --rev 26.1 --compile SPIGOT 2>&1 | tail -30
+        uses: SpraxDev/Action-SpigotMC@v5
+        with:
+          versions: 26.1
+          generateSrc: false
+          remapped: false
 
       - name: Build with Maven
         run: mvn -B package --file pom.xml -DskipTests
