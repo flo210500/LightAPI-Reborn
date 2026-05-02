@@ -44,6 +44,7 @@
 <!--        <module>nms/v1_16_R3</module>-->
         <module>nms/v1_17_R1</module>
         <module>nms/v1.18_R1</module>
+        <module>nms/v26_1_R1</module>
     </modules>
     <distributionManagement>
         <repository>
